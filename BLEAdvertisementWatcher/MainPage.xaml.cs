@@ -14,33 +14,24 @@ namespace BLEAdvertisementWatcher
         public MainPage()
         {
             this.InitializeComponent();
-
             imageChocola.Visibility = Visibility.Collapsed;
-
             watcher = new BluetoothLEAdvertisementWatcher();
-
             var manufacturerData = new BluetoothLEManufacturerData();
             manufacturerData.CompanyId = 0xFFFE;
-
             watcher.AdvertisementFilter.Advertisement.ManufacturerData.Add(manufacturerData);
-
-            watcher.SignalStrengthFilter.SamplingInterval = TimeSpan.FromMilliseconds(500);
-
+            watcher.SignalStrengthFilter.SamplingInterval = TimeSpan.FromMilliseconds(2000);
             watcher.Received += OnAdvertisementReceived;
             watcher.Start();
-            Debug.WriteLine("watching");
         }
 
         void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher sender, BluetoothLEAdvertisementReceivedEventArgs args)
         {
             foreach (var item in args.Advertisement.GetManufacturerDataByCompanyId(0xFFFE))
             {
-                Debug.WriteLine("gevonden");
                 using (var dataReader = DataReader.FromBuffer(item.Data))
                 {
                     var length = dataReader.ReadInt32();
                     string huidigeKorting = dataReader.ReadString((uint)length);
-                    Debug.WriteLine(huidigeKorting);
                     if (huidigeKorting == "chocola") imageChocola.Visibility = Visibility.Visible;
                     else imageChocola.Visibility = Visibility.Collapsed;
                 }
