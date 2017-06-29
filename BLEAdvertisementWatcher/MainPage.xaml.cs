@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using Windows.Devices.Bluetooth.Advertisement;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml;

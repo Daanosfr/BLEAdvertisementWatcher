@@ -8,6 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image x:Name="imageChocola" Source="http://tonyschocolonely.tensheep.netdna-cdn.com/wp-content/uploads/2016/10/TC_VS_stapel_classics_180gr_melk_dicht_RGB.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image x:Name="imageChocola" Source="Assets\chocola.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </Grid>
 </Page>
