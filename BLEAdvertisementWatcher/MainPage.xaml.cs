@@ -41,10 +41,8 @@ namespace BLEAdvertisementWatcher
                     var length = dataReader.ReadInt32();
                     string huidigeKorting = dataReader.ReadString((uint)length);
                     Debug.WriteLine(huidigeKorting);
-                    if (huidigeKorting == "melk")
-                    {
-                        imageChocola.Visibility = Visibility.Visible;
-                    }
+                    if (huidigeKorting == "chocola") imageChocola.Visibility = Visibility.Visible;
+                    else imageChocola.Visibility = Visibility.Collapsed;
                 }
             }
         }
