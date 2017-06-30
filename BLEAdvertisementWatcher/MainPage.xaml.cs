@@ -13,7 +13,7 @@ namespace BLEAdvertisementWatcher
         public MainPage()
         {
             this.InitializeComponent();
-            imageChocola.Visibility = Visibility.Collapsed;
+            imageChocola.Visibility = Visibility.Visible;
             watcher = new BluetoothLEAdvertisementWatcher();
             var manufacturerData = new BluetoothLEManufacturerData();
             manufacturerData.CompanyId = 0xFFFE;
